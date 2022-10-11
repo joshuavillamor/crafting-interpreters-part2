@@ -56,8 +56,8 @@ abstract class Stmt {
   }
 
   static class Return extends Stmt {
-    Return(Token keyword, Expr value) {
-      this.keyword = keyword;
+    Return(Expr value) {
+
       this.value = value;
     }
 
@@ -66,7 +66,6 @@ abstract class Stmt {
       return visitor.visitReturnStmt(this);
     }
 
-    final Token keyword;
     final Expr value;
   }
   
